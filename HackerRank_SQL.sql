@@ -55,6 +55,39 @@ UNION
  from STATION 
  order by city_len desc, CITY asc limit 1);
 
+# Query the list of CITY names starting with vowels (i.e., a, e, i, o, or u) from STATION. Your result cannot contain duplicates.
+
+select DISTINCT(CITY)
+from STATION
+WHERE CITY LIKE 'u%'
+OR CITY LIKE 'a%'
+OR CITY LIKE 'e%'
+OR CITY LIKE 'i%'
+OR CITY LIKE 'o%'
+
+
+# Query the list of CITY names ending with vowels (a, e, i, o, u) from STATION. Your result cannot contain duplicates.
+
+select DISTINCT(CITY)
+from STATION
+WHERE CITY LIKE '%u'
+OR CITY LIKE '%a'
+OR CITY LIKE '%e'
+OR CITY LIKE '%i'
+OR CITY LIKE '%o'
+
+# Query the list of CITY names from STATION 
+# which have vowels (i.e., a, e, i, o, and u) as 
+# both their first and last characters. Your result cannot contain duplicates.
+
+SELECT DISTINCT CITY
+FROM STATION
+WHERE LEFT(CITY, 1) IN ('a', 'e', 'i', 'o', 'u')
+AND RIGHT(CITY, 1) IN ('a', 'e', 'i', 'o', 'u');
+
+
+
+
 
 
 
